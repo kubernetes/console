@@ -9349,6 +9349,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"countries-and-timezones@npm:^3.7.2":
+  version: 3.7.2
+  resolution: "countries-and-timezones@npm:3.7.2"
+  checksum: 6375ea8a4b1da023d57f6a7fb6bc14ace31da686be14b941d255749471a2797f1a66e77d95d7ef9ac15a0d74e08f753f747e9240f57bece26b784be40b940a0e
+  languageName: node
+  linkType: hard
+
 "create-jest@npm:^29.7.0":
   version: 29.7.0
   resolution: "create-jest@npm:29.7.0"
@@ -14422,6 +14429,7 @@ __metadata:
     codelyzer: 6.0.2
     concurrently: 9.0.1
     core-js: 3.39.0
+    countries-and-timezones: ^3.7.2
     crop-url: 4.0.1
     cypress: 13.15.1
     cypress-fail-fast: 7.1.1

@@ -1979,6 +1979,12 @@
       <trans-unit id="8967487471439603323" datatype="html">
         <source>Hides all-namespaces option from the namespaces dropdown list in UI.</source>
       </trans-unit>
+      <trans-unit id="3894039560161506093" datatype="html">
+        <source>Timezone</source>
+      </trans-unit>
+      <trans-unit id="752874111362710041" datatype="html">
+        <source>Change the timezone of the dashboard</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>

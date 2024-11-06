@@ -24,6 +24,7 @@ import {
 import {Subject, timer} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
+import {TimezoneService} from '@common/services/global/timezone';
 
 /**
  * Display a date
@@ -64,6 +65,10 @@ export class DateComponent implements OnChanges {
     return this.relative_;
   }
 
+  get timezone(): string {
+    return this._timezone.utcOffset;
+  }
+
   iteration = 0;
 
   private relative_: boolean;
@@ -75,7 +80,10 @@ export class DateComponent implements OnChanges {
     24, // Hours in a day
   ];
 
-  constructor(private readonly cdr_: ChangeDetectorRef) {}
+  constructor(
+    private readonly cdr_: ChangeDetectorRef,
+    private readonly _timezone: TimezoneService
+  ) {}
 
   ngOnChanges() {
     if (this.relative_) {

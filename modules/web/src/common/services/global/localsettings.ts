@@ -16,15 +16,20 @@ import {Injectable} from '@angular/core';
 
 import {LocalSettings} from '@api/root.api';
 import {ThemeService} from './theme';
+import {TimezoneService} from './timezone';
 
 @Injectable()
 export class LocalSettingsService {
   private readonly _settingsKey = 'localSettings';
   private settings_: LocalSettings = {
     theme: ThemeService.SystemTheme,
+    timezone: TimezoneService.DefaultTimezone,
   };
 
-  constructor(private readonly theme_: ThemeService) {}
+  constructor(
+    private readonly theme_: ThemeService,
+    private readonly timezone_: TimezoneService
+  ) {}
 
   init(): void {
     const cookieValue = localStorage.getItem(this._settingsKey);
@@ -40,6 +45,12 @@ export class LocalSettingsService {
   handleThemeChange(theme: string): void {
     this.settings_.theme = theme;
     this.theme_.theme = theme;
+    this.updateCookie_();
+  }
+
+  handleTimezoneChange(timezone: string): void {
+    this.settings_.timezone = timezone;
+    this.timezone_.timezone = timezone;
     this.updateCookie_();
   }
 

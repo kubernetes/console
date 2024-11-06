@@ -60,6 +60,7 @@
     "@swimlane/ngx-charts": "20.5.0",
     "ace-builds": "1.36.3",
     "core-js": "3.39.0",
+    "countries-and-timezones": "^3.7.2",
     "crop-url": "4.0.1",
     "d3-shape": "3.2.0",
     "d3-time-format": "4.1.0",

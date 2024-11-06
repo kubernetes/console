@@ -70,5 +70,26 @@ limitations under the License.
         </mat-select>
       </mat-form-field>
     </kd-settings-entry>
+
+    <kd-settings-entry
+      key="Timezone"
+      i18n-key
+      desc="Change the timezone of the dashboard"
+      i18n-desc
+    >
+      <mat-form-field fxFlex>
+        <mat-select
+          (ngModelChange)="onTimezoneSelected($event)"
+          [(ngModel)]="selectedTimezone"
+        >
+          <mat-option
+            *ngFor="let timezone of timezones"
+            [value]="timezone.value"
+          >
+            {{ timezone.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </kd-settings-entry>
   </div>
 </kd-card>

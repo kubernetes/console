@@ -782,6 +782,7 @@ export interface CsrfToken {
 
 export interface LocalSettings {
   theme: string;
+  timezone: string;
 }
 
 export interface Theme {
@@ -1307,4 +1308,9 @@ export interface SJSMessageEvent extends SockJSSimpleEvent {
 export interface User {
   name: string;
   authenticated: boolean;
+}
+
+export interface Timezone {
+  value: string;
+  label: string;
 }

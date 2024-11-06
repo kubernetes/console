@@ -15,13 +15,14 @@
 import {DOCUMENT} from '@angular/common';
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MatSelect} from '@angular/material/select';
-import {LocalSettings, Theme} from '@api/root.api';
+import {LocalSettings, Theme, Timezone} from '@api/root.api';
 import {IConfig, LanguageConfig} from '@api/root.ui';
 import {LocalSettingsService} from '@common/services/global/localsettings';
 import {ThemeService} from '@common/services/global/theme';
 import {environment} from '@environments/environment';
 import {CookieService} from 'ngx-cookie-service';
 import {CONFIG_DI_TOKEN} from '../../index.config';
+import {TimezoneService} from '@common/services/global/timezone';
 
 @Component({
   selector: 'kd-local-settings',
@@ -35,6 +36,8 @@ export class LocalSettingsComponent implements OnInit {
   themes: Theme[];
   selectedTheme: string;
   systemTheme: string;
+  timezones: Timezone[] = [];
+  selectedTimezone: string;
 
   @ViewChild(MatSelect, {static: true}) private readonly select_: MatSelect;
 
@@ -42,6 +45,7 @@ export class LocalSettingsComponent implements OnInit {
     private readonly settings_: LocalSettingsService,
     private readonly theme_: ThemeService,
     private readonly cookies_: CookieService,
+    private readonly timezone_: TimezoneService,
     @Inject(DOCUMENT) private readonly document_: Document,
     @Inject(CONFIG_DI_TOKEN) private readonly appConfig_: IConfig
   ) {}
@@ -55,6 +59,9 @@ export class LocalSettingsComponent implements OnInit {
     this.themes = this.theme_.themes;
     this.selectedTheme = this.theme_.theme;
     this.systemTheme = ThemeService.SystemTheme;
+
+    this.timezones = this.timezone_.timezones;
+    this.selectedTimezone = this.timezone_.timezone;
   }
 
   onThemeChange(): void {
@@ -65,6 +72,11 @@ export class LocalSettingsComponent implements OnInit {
   onLanguageSelected(selectedLanguage: string) {
     this.cookies_.set(this.appConfig_.languageCookieName, selectedLanguage);
     this.document_.location.reload();
+  }
+
+  onTimezoneSelected(selectedTimezone: string) {
+    this.settings.timezone = selectedTimezone;
+    this.settings_.handleTimezoneChange(this.settings.timezone);
   }
 
   isProdMode(): boolean {
