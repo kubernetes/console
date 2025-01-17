@@ -37,6 +37,7 @@ import {TitleService} from './title';
 import {VerberService} from './verber';
 import {PinnerService} from './pinner';
 import {MeService} from '@common/services/global/me';
+import {TimezoneService} from './timezone';
 
 @NgModule({
   providers: [
@@ -61,6 +62,7 @@ import {MeService} from '@common/services/global/me';
     ParamsService,
     LocalConfigLoaderService,
     DecoderService,
+    TimezoneService,
     {
       provide: APP_INITIALIZER,
       useFactory: init,
@@ -73,6 +75,7 @@ import {MeService} from '@common/services/global/me';
         ThemeService,
         LocalConfigLoaderService,
         MeService,
+        TimezoneService,
       ],
       multi: true,
     },
@@ -99,7 +102,8 @@ export function init(
   history: HistoryService,
   theme: ThemeService,
   loader: LocalConfigLoaderService,
-  me: MeService
+  me: MeService,
+  timezone: TimezoneService
 ): Function {
   return async () => {
     await loader.init();
@@ -108,6 +112,7 @@ export function init(
     config.init();
     history.init();
     theme.init();
+    timezone.init();
     await me.init();
     return await globalSettings.init();
   };

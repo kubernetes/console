@@ -17,18 +17,21 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 
 import {LocalSettingsService} from '@common/services/global/localsettings';
 import {ThemeService} from '@common/services/global/theme';
+import {TimezoneService} from '@common/services/global/timezone';
 import {TitleService} from '@common/services/global/title';
 
 @Component({selector: 'kd-root', template: '<router-outlet></router-outlet>'})
 export class RootComponent implements OnInit {
   private _theme = this._themeService.theme;
+  private _timezone = this._timezoneService.timezone;
 
   constructor(
     private readonly _themeService: ThemeService,
     private readonly _localSettingService: LocalSettingsService,
     private readonly _overlayContainer: OverlayContainer,
     private readonly _kdRootRef: ElementRef,
-    private readonly _titleService: TitleService
+    private readonly _titleService: TitleService,
+    private readonly _timezoneService: TimezoneService
   ) {}
 
   ngOnInit(): void {
@@ -36,9 +39,15 @@ export class RootComponent implements OnInit {
     this._themeService.subscribe(this.onThemeChange_.bind(this));
 
     const localSettings = this._localSettingService.get();
-    if (localSettings && localSettings.theme) {
-      this._theme = localSettings.theme;
-      this._themeService.theme = localSettings.theme;
+    if (localSettings) {
+      if (localSettings.theme) {
+        this._theme = localSettings.theme;
+        this._themeService.theme = localSettings.theme;
+      }
+      if (localSettings.timezone) {
+        this._timezone = localSettings.timezone;
+        this._timezoneService.timezone = localSettings.timezone;
+      }
     }
 
     this.applyOverlayContainerTheme_('', this._theme);

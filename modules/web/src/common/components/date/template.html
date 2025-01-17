@@ -16,7 +16,7 @@ limitations under the License.
 
 <span
   class="kd-date"
-  [matTooltip]="date | date: format"
+  [matTooltip]="date | date: format: timezone"
 >
-  {{ relative ? (date | kdRelativeTime: iteration) : (date | date) }}
+  {{ relative ? (date | kdRelativeTime: iteration) : (date | date: undefined: timezone) }}
 </span>
