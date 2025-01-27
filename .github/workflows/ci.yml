@@ -190,7 +190,7 @@ jobs:
       - working-directory: modules/web
         run: yarn
       - run: PATH=$PATH:$GOPATH/bin make coverage
-      - uses: codecov/codecov-action@v5.3.0
+      - uses: codecov/codecov-action@v5.3.1
         with:
           directory: ./.tmp
           token: ${{ secrets.CODECOV_TOKEN }}
