@@ -357,6 +357,10 @@ func DeployAppFromFile(cfg *rest.Config, spec *AppDeploymentFromFileSpec) (bool,
 			namespace = data.GetNamespace()
 		}
 
+		if namespace == "" {
+			namespace = "default"
+		}
+
 		if resource.Namespaced {
 			_, err = dynamicClient.Resource(groupVersionResource).Namespace(namespace).Create(context.TODO(), data, metaV1.CreateOptions{})
 		} else {
