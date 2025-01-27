@@ -15,6 +15,12 @@
 {{- if and .Values.app.ingress.enabled (eq .Values.app.mode "dashboard")}}
 {{- include "kubernetes-dashboard.validate.ingressIssuerScope" $ }}
 
+
+# Determine the service port to use for the ingress configuration
+# If TLS is enabled in the ingress configuration, use the TLS service port.
+# Otherwise, fall back to the HTTP service port.
+{{- $servicePort := (ternary $.Values.kong.proxy.tls.servicePort $.Values.kong.proxy.http.servicePort $.Values.app.ingress.tls.enabled) }}
+
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -73,7 +79,7 @@ spec:
               service:
                 name: {{ template "kong.fullname" (index $.Subcharts "kong") }}-proxy
                 port:
-                  number: {{ $.Values.kong.proxy.tls.servicePort }}
+                  number: {{ $servicePort }}
     {{- end }}
     {{- else }}
     - http:
@@ -84,6 +90,6 @@ spec:
               service:
                 name: {{ template "kong.fullname" (index $.Subcharts "kong") }}-proxy
                 port:
-                  number: {{ $.Values.kong.proxy.tls.servicePort }}
+                  number: {{ $servicePort }}
     {{- end }}
 {{- end }}
