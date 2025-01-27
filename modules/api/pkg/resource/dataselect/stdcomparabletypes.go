@@ -97,3 +97,21 @@ func ints64Compare(a, b int64) int {
 	}
 	return -1
 }
+
+type StdComparableMap map[string]string
+
+func (self StdComparableMap) Compare(otherV ComparableValue) int {
+	return 0
+}
+
+func (self StdComparableMap) Contains(otherV ComparableValue) bool {
+	other := otherV.(StdComparableString)
+	keyValueList := strings.Split(string(other), "=")
+	if len(keyValueList) != 2 {
+		return false
+	}
+	if value, ok := self[keyValueList[0]]; ok {
+		return value == keyValueList[1]
+	}
+	return false
+}

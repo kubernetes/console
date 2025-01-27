@@ -28,4 +28,6 @@ const (
 	FirstSeenProperty         = "firstSeen"
 	LastSeenProperty          = "lastSeen"
 	ReasonProperty            = "reason"
+	LabelProperty             = "label"
+	AnnotationsProperty       = "annotations"
 )

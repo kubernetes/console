@@ -276,7 +276,14 @@ export abstract class ResourceListBase<T extends ResourceList, R extends Resourc
       result = params;
     }
 
-    const filterByQuery = this.cardFilter_.query ? `name,${this.cardFilter_.query}` : '';
+    const filters = this.cardFilter_.query ? this.cardFilter_.query.split(',') : [];
+
+    const filterByQuery = filters.length == 1
+      ? `name,${this.cardFilter_.query}`
+      : filters.length > 1 && filters.length % 2 == 0
+        ? this.cardFilter_.query
+        : '';
+
     if (filterByQuery) {
       return result.set('filterBy', filterByQuery);
     }
