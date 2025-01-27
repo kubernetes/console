@@ -9999,10 +9999,16 @@
   },
   "configmap.ConfigMapDetail": {
    "required": [
-    "typeMeta",
-    "objectMeta"
+    "objectMeta",
+    "typeMeta"
    ],
    "properties": {
+    "binaryData": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "integer"
+     }
+    },
     "data": {
      "type": "object",
      "additionalProperties": {

@@ -2680,6 +2680,18 @@
         <source>Hides all-namespaces option from the namespaces dropdown list in UI.</source>
         <target state="new">Hides all-namespaces option from the namespaces dropdown list in UI.</target>
       </trans-unit>
+      <trans-unit id="881679026777341622" datatype="html">
+        <source> Binary Data </source>
+        <target state="new"> Binary Data </target>
+      </trans-unit>
+      <trans-unit id="5313896736024470177" datatype="html">
+        <source> Key </source>
+        <target state="new"> Key </target>
+      </trans-unit>
+      <trans-unit id="2390412373676968256" datatype="html">
+        <source> Size </source>
+        <target state="new"> Size </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

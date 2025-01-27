@@ -66,4 +66,20 @@ export class ConfigMapDetailComponent implements OnInit, OnDestroy {
 
     return JSON.stringify(cm.data);
   }
+
+  getConfigMapBinaryData(cm: ConfigMapDetail): {
+    name: string;
+    size: number;
+  }[] {
+    if (!cm) {
+      return [];
+    }
+
+    return Object.entries(cm.binaryData).map(([name, size]) => ({
+      name,
+      size,
+    }));
+  }
+
+  displayedBinaryDataColumns: string[] = ['name', 'size'];
 }

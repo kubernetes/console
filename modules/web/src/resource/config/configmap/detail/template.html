@@ -46,3 +46,52 @@ limitations under the License.
     </div>
   </div>
 </kd-card>
+
+<kd-card
+  [initialized]="isInitialized"
+  role="table"
+>
+  <div
+    title
+    i18n
+  >
+    Binary Data
+  </div>
+  <div content>
+    <mat-table
+      *ngIf="configMap?.binaryData"
+      [dataSource]="getConfigMapBinaryData(configMap)"
+    >
+      <ng-container matColumnDef="name">
+        <mat-header-cell
+          *matHeaderCellDef
+          i18n
+        >
+          Key
+        </mat-header-cell>
+        <mat-cell *matCellDef="let cm"> {{ cm.name }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="size">
+        <mat-header-cell
+          *matHeaderCellDef
+          i18n
+        >
+          Size
+        </mat-header-cell>
+        <mat-cell *matCellDef="let cm"> {{ cm.size }} bytes </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedBinaryDataColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedBinaryDataColumns"></mat-row>
+    </mat-table>
+
+    <div
+      *ngIf="!configMap?.binaryData"
+      class="kd-card-padding"
+      i18n
+    >
+      There is no data to display.
+    </div>
+  </div>
+</kd-card>
