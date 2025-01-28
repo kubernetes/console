@@ -144,7 +144,7 @@
     "stylelint-config-standard-scss": "14.0.0",
     "stylelint-no-unsupported-browser-features": "8.0.2",
     "stylelint-order": "6.0.4",
-    "stylelint-prettier": "5.0.2",
+    "stylelint-prettier": "5.0.3",
     "tar": "7.4.3",
     "through2": "4.0.2",
     "ts-jest": "29.2.5",
