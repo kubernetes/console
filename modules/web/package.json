@@ -142,7 +142,7 @@
     "source-map-explorer": "2.5.3",
     "stylelint": "16.14.1",
     "stylelint-config-standard-scss": "14.0.0",
-    "stylelint-no-unsupported-browser-features": "8.0.2",
+    "stylelint-no-unsupported-browser-features": "8.0.4",
     "stylelint-order": "6.0.4",
     "stylelint-prettier": "5.0.3",
     "tar": "7.4.3",

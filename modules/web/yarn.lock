@@ -14831,7 +14831,7 @@ __metadata:
     strip-ansi: 7.1.0
     stylelint: 16.14.1
     stylelint-config-standard-scss: 14.0.0
-    stylelint-no-unsupported-browser-features: 8.0.2
+    stylelint-no-unsupported-browser-features: 8.0.4
     stylelint-order: 6.0.4
     stylelint-prettier: 5.0.3
     systemjs: 6.15.1
@@ -19199,15 +19199,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-no-unsupported-browser-features@npm:8.0.2":
-  version: 8.0.2
-  resolution: "stylelint-no-unsupported-browser-features@npm:8.0.2"
+"stylelint-no-unsupported-browser-features@npm:8.0.4":
+  version: 8.0.4
+  resolution: "stylelint-no-unsupported-browser-features@npm:8.0.4"
   dependencies:
     doiuse: ^6.0.5
     postcss: ^8.4.32
   peerDependencies:
     stylelint: ^16.0.2
-  checksum: 89eae1241d94f3b74b985d345a21bcedbed2b50c16df30109c34baafa304eb6fc32212b5fc3112bb8699ecf7c70cb14b817b16bc7efc7d0f449dd3e0289bbafb
+  checksum: 6c35b8326b47db1732df16fd7903316f2cdbe652de2d0d5f42bc13d07e094630ae7e33ce5212a8590f93472603cb88dd67ade964419cd39dbdc2dc27458776c2
   languageName: node
   linkType: hard
 
