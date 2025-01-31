@@ -1979,6 +1979,15 @@
       <trans-unit id="8967487471439603323" datatype="html">
         <source>Hides all-namespaces option from the namespaces dropdown list in UI.</source>
       </trans-unit>
+      <trans-unit id="2390412373676968256" datatype="html">
+        <source> Size </source>
+      </trans-unit>
+      <trans-unit id="5313896736024470177" datatype="html">
+        <source> Key </source>
+      </trans-unit>
+      <trans-unit id="881679026777341622" datatype="html">
+        <source> Binary Data </source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
