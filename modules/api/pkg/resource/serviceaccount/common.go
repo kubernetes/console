@@ -29,6 +29,8 @@ func (self ServiceAccountCell) GetProperty(name dataselect.PropertyName) datasel
 		return dataselect.StdComparableTime(self.ObjectMeta.CreationTimestamp.Time)
 	case dataselect.NamespaceProperty:
 		return dataselect.StdComparableString(self.ObjectMeta.Namespace)
+	case dataselect.AnnotationsProperty:
+		return dataselect.StdComparableMap(self.ObjectMeta.Annotations)
 	default:
 		// If name is not supported then just return a constant dummy value, sort will have no effect.
 		return nil

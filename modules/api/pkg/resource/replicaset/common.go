@@ -37,6 +37,10 @@ func (self ReplicaSetCell) GetProperty(name dataselect.PropertyName) dataselect.
 		return dataselect.StdComparableTime(self.ObjectMeta.CreationTimestamp.Time)
 	case dataselect.NamespaceProperty:
 		return dataselect.StdComparableString(self.ObjectMeta.Namespace)
+	case dataselect.LabelProperty:
+		return dataselect.StdComparableMap(self.ObjectMeta.Labels)
+	case dataselect.AnnotationsProperty:
+		return dataselect.StdComparableMap(self.ObjectMeta.Annotations)
 	default:
 		// if name is not supported then just return a constant dummy value, sort will have no effect.
 		return nil
