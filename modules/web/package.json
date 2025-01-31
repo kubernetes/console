@@ -68,7 +68,7 @@
     "js-yaml": "4.1.0",
     "jwt-decode": "4.0.0",
     "material-design-icons": "3.0.1",
-    "ngx-cookie-service": "19.0.0",
+    "ngx-cookie-service": "19.1.0",
     "ngx-pipes": "3.2.2",
     "normalize.css": "8.0.1",
     "roboto-fontface": "0.10.0",

@@ -14812,7 +14812,7 @@ __metadata:
     minimatch: 10.0.1
     minimist: 1.2.8
     ng-extract-i18n-merge: 2.14.1
-    ngx-cookie-service: 19.0.0
+    ngx-cookie-service: 19.1.0
     ngx-pipes: 3.2.2
     node-gyp: 11.0.0
     normalize.css: 8.0.1
@@ -16013,15 +16013,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ngx-cookie-service@npm:19.0.0":
-  version: 19.0.0
-  resolution: "ngx-cookie-service@npm:19.0.0"
+"ngx-cookie-service@npm:19.1.0":
+  version: 19.1.0
+  resolution: "ngx-cookie-service@npm:19.1.0"
   dependencies:
     tslib: ^2.8.0
   peerDependencies:
     "@angular/common": ^19.0.0
     "@angular/core": ^19.0.0
-  checksum: a8476d61a2e96fb44f239410b359a213a6de8bf4e468271ce91c73a775f1b45ad690cb19ecd1af3b38ae36d55e79b2b9f09bca6b637572c2f74b800a4d244ab7
+  checksum: c878baaf147b1ab16715deedd7d952a17749033fc05e6322aa628d88d1637fc8b841945f4240ecf322c4bc935b640b233103125967ca6fde070146aea0763a46
   languageName: node
   linkType: hard
 
