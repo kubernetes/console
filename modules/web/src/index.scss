@@ -93,6 +93,22 @@ code {
   }
 }
 
+.kd-scroll-container > :not(router-outlet, :last-child) {
+  padding: $content-padding 0;
+
+  > :nth-child(1 of :has(.mat-card)) {
+    .mat-card {
+      margin-top: 0;
+    }
+  }
+
+  > :nth-last-child(1 of :has(.mat-card)) {
+    .mat-card {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .mat-chip.mat-standard-chip {
   box-shadow: none !important;
   font-size: $body-font-size-base;
