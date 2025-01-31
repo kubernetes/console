@@ -148,8 +148,9 @@ func TestGetStatefulSetListFromChannels(t *testing.T) {
 						CreationTimestamp: metaV1.Unix(111, 222),
 					},
 					TypeMeta: types.TypeMeta{
-						Kind:     types.ResourceKindStatefulSet,
-						Scalable: true,
+						Kind:        types.ResourceKindStatefulSet,
+						Scalable:    true,
+						Restartable: true,
 					},
 					Pods: common.PodInfo{
 						Current:  7,
