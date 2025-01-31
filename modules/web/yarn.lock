@@ -7013,12 +7013,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.10.10":
-  version: 22.10.10
-  resolution: "@types/node@npm:22.10.10"
+"@types/node@npm:22.12.0":
+  version: 22.12.0
+  resolution: "@types/node@npm:22.12.0"
   dependencies:
     undici-types: ~6.20.0
-  checksum: 4906f63dd1dcee6acc096b3336353e04a15746b639bbf4f585e3093851a17852a9ea0e302caef2d782c836adb3812e6eb3305b8783809320013a1d77798816b3
+  checksum: 2f6dd04abebc456900f7dab2311f63ab361818cd3ecf5078b72c63ed416a38a3e72711669a26cec070e0d2e09d7661976f7d1fa3fc029eb9383f0f7e421a1d55
   languageName: node
   linkType: hard
 
@@ -14776,7 +14776,7 @@ __metadata:
     "@types/jest": 29.5.14
     "@types/js-yaml": 4.0.9
     "@types/lodash-es": 4.17.12
-    "@types/node": 22.10.10
+    "@types/node": 22.12.0
     "@typescript-eslint/eslint-plugin": 8.21.0
     "@typescript-eslint/parser": 8.21.0
     ace-builds: 1.37.5
